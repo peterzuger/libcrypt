@@ -8,7 +8,6 @@
 #ifndef SHA1_HPP
 #define SHA1_HPP
 
-#include <cstring>
 #include <cstdint>
 #include <array>
 #include "impl.hpp"
