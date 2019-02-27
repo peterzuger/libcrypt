@@ -1,5 +1,5 @@
 /**
- * @file   sha1.hpp
+ * @file   libcrypt/include/sha1.hpp
  * @author Brad Conte (brad AT bradconte.com)
  * @author Peter Zueger
  * @date   26.02.2019
@@ -18,7 +18,7 @@ namespace libcrypt{
         std::uint32_t datalen;
         std::uint64_t bitlen;
         std::array<std::uint32_t, 5> state;
-        constexpr static std::array<std::uint32_t, 4> k{
+        inline constexpr static std::array<std::uint32_t, 4> k{
             0x5a827999,
             0x6ed9eba1,
             0x8f1bbcdc,
