@@ -5,8 +5,8 @@
  * @date   27.02.2019
  * @brief  sha256 hash implementation
  */
-#ifndef SHA256_HPP
-#define SHA256_HPP
+#ifndef LIBCRYPT_SHA256_HPP
+#define LIBCRYPT_SHA256_HPP
 
 #include <cstdint>
 #include <array>
@@ -146,4 +146,4 @@ namespace libcrypt{
     };
 }
 
-#endif /* SHA256_HPP */
+#endif /* LIBCRYPT_SHA256_HPP */

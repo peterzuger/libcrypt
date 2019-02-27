@@ -5,8 +5,8 @@
  * @date   26.02.2019
  * @brief  sha1 hash implementation
  */
-#ifndef SHA1_HPP
-#define SHA1_HPP
+#ifndef LIBCRYPT_SHA1_HPP
+#define LIBCRYPT_SHA1_HPP
 
 #include <cstdint>
 #include <array>
@@ -153,4 +153,4 @@ namespace libcrypt{
     };
 }
 
-#endif /* SHA1_HPP */
+#endif /* LIBCRYPT_SHA1_HPP */
