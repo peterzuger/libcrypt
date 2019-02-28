@@ -90,7 +90,7 @@ namespace libcrypt{
             for(const auto& i : _data){
                 data[datalen] = i;
                 datalen++;
-                if(datalen == 64){
+                if(datalen == data.size()){
                     transform();
                     bitlen += 512;
                     datalen = 0;
