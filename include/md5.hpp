@@ -142,7 +142,7 @@ namespace libcrypt{
             }
         }
 
-        std::array<std::uint8_t,16> void final(){
+        std::array<std::uint8_t,16> final(){
             std::array<std::uint8_t,16> hash;
             size_t i = datalen;
 
@@ -156,8 +156,8 @@ namespace libcrypt{
                 while(i < 64)
                     data[i++] = 0x00;
                 transform();
-                for(std::size_t i = 0; i < 56; i++)
-                    data[i] = 0;
+                for(std::size_t j = 0; j < 56; j++)
+                    data[j] = 0;
             }
 
             // Append to the padding the total message's length in bits and transform.
