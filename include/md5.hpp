@@ -130,9 +130,10 @@ namespace libcrypt{
             state[3] = 0x10325476;
         }
 
-        void update(const std::uint8_t _data[], size_t len){
-            for(size_t i = 0; i < len; ++i){
-                data[datalen] = _data[i];
+        template<typename T>
+        void update(const T& _data){
+            for(const auto& i : _data){
+                data[datalen] = i;
                 datalen++;
                 if(datalen == 64){
                     transform();
