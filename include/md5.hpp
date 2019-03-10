@@ -13,6 +13,32 @@
 #include "impl.hpp"
 
 namespace libcrypt{
+    namespace impl{
+        constexpr void FF(std::uint32_t& a, std::uint32_t b, std::uint32_t c,
+                          std::uint32_t d, std::uint32_t m, std::uint32_t s, std::uint32_t t){
+            a += ((b & c) | (~b & d)) + m + t;
+            a = b + ROTLEFT(a,s);
+        }
+
+        constexpr void GG(std::uint32_t& a, std::uint32_t b, std::uint32_t c,
+                          std::uint32_t d, std::uint32_t m, std::uint32_t s, std::uint32_t t){
+            a += ((b & d) | (c & ~d)) + m + t;
+            a = b + ROTLEFT(a,s);
+        }
+
+        constexpr void HH(std::uint32_t& a, std::uint32_t b, std::uint32_t c,
+                          std::uint32_t d, std::uint32_t m, std::uint32_t s, std::uint32_t t){
+            a += (b ^ c ^ d) + m + t;
+            a = b + ROTLEFT(a,s);
+        }
+
+        constexpr void II(std::uint32_t& a, std::uint32_t b, std::uint32_t c,
+                          std::uint32_t d, std::uint32_t m, std::uint32_t s, std::uint32_t t){
+            a += (c ^ (b | ~d)) + m + t;
+            a = b + ROTLEFT(a,s);
+        }
+    }
+
     class md5{
         std::array<std::uint8_t,64> data;
         std::uint32_t datalen;
@@ -157,20 +183,20 @@ namespace libcrypt{
                 while(i < 64)
                     data[i++] = 0x00;
                 transform();
-                for(std::size_t j = 0; j < 56; j++)
-                    data[j] = 0;
+                for(std::size_t i = 0; i < 56; i++)
+                    data[i] = 0;
             }
 
             // Append to the padding the total message's length in bits and transform.
-            bitlen += datalen * 8;
-            data[56] = bitlen;
-            data[57] = bitlen >> 8;
-            data[58] = bitlen >> 16;
-            data[59] = bitlen >> 24;
-            data[60] = bitlen >> 32;
-            data[61] = bitlen >> 40;
-            data[62] = bitlen >> 48;
-            data[63] = bitlen >> 56;
+            bitlen  += datalen * 8;
+            data[56] = static_cast<std::uint8_t>(bitlen);
+            data[57] = static_cast<std::uint8_t>(bitlen >> 8);
+            data[58] = static_cast<std::uint8_t>(bitlen >> 16);
+            data[59] = static_cast<std::uint8_t>(bitlen >> 24);
+            data[60] = static_cast<std::uint8_t>(bitlen >> 32);
+            data[61] = static_cast<std::uint8_t>(bitlen >> 40);
+            data[62] = static_cast<std::uint8_t>(bitlen >> 48);
+            data[63] = static_cast<std::uint8_t>(bitlen >> 56);
             transform();
 
             // Since this implementation uses little endian byte ordering and MD uses big endian,

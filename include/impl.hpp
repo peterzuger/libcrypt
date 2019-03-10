@@ -46,26 +46,6 @@ namespace libcrypt{
         constexpr std::uint32_t SIG1(std::uint32_t x){
             return (ROTRIGHT(x,17) ^ ROTRIGHT(x,19) ^ ((x) >> 10));
         }
-
-        template<typename T>
-        constexpr void FF(T a, T b, T c, T d, T m, T s, T t){
-            a += ((b & c) | (~b & d)) + m + t; a = b + ROTLEFT(a,s);
-        }
-
-        template<typename T>
-        constexpr void GG(T a, T b, T c, T d, T m, T s, T t){
-            a += ((b & d) | (c & ~d)) + m + t; a = b + ROTLEFT(a,s);
-        }
-
-        template<typename T>
-        constexpr void HH(T a, T b, T c, T d, T m, T s, T t){
-            a += (b ^ c ^ d) + m + t; a = b + ROTLEFT(a,s);
-        }
-
-        template<typename T>
-        constexpr void II(T a, T b, T c, T d, T m, T s, T t){
-            a += (c ^ (b | ~d)) + m + t; a = b + ROTLEFT(a,s);
-        }
     }
 }
 
