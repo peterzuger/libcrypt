@@ -158,6 +158,8 @@ namespace libcrypt{
 
         template<typename T>
         void update(const T& _data){
+            static_assert((sizeof(typename T::value_type) == 1),
+                          "libcrypt::md5::update: T::value_type must be byte");
             for(const auto& i : _data){
                 data[datalen] = static_cast<std::uint8_t>(i);
                 datalen++;
