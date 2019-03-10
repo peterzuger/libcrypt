@@ -99,7 +99,7 @@ namespace libcrypt{
         template<typename T>
         void update(const T& _data){
             for(const auto& i : _data){
-                data[datalen] = i;
+                data[datalen] = static_cast<std::uint8_t>(i);
                 datalen++;
                 if(datalen == data.size()){
                     transform();
