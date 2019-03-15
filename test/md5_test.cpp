@@ -19,10 +19,15 @@ int main(){
 
         algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
     {
         libcrypt::md5 algo;
@@ -31,10 +36,15 @@ int main(){
 
         //algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
     {
         libcrypt::md5 algo;
@@ -43,10 +53,15 @@ int main(){
 
         algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
     {
         libcrypt::md5 algo;
@@ -56,10 +71,15 @@ int main(){
 
         algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
     {
         libcrypt::md5 algo;
@@ -69,10 +89,15 @@ int main(){
         for(std::size_t i = 0; i < 1000000; i++)
             algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
     {
         libcrypt::md5 algo;
@@ -82,9 +107,14 @@ int main(){
         for(std::size_t i = 0; i < 16777216; i++)
             algo.update(txt);
         auto res = algo.final();
-        std::cout << "0x";
+        std::stringstream str;
+        str << "0x";
         for(const auto& i : res)
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout << "\n" << output << "\n";
+            str << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
+        std::cout << str.str() << "\n" << output << "\n";
+        if(str.str() != output){
+            std::cerr << "failed\n";
+            return 1;
+        }
     }
 }
