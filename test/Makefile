@@ -11,6 +11,7 @@ endif
 CXXSRC  = $(wildcard *.cpp)
 
 EXECUTABLES = $(CXXSRC:.cpp=)
+TESTS = $(CXXSRC:.cpp=.test)
 
 CC      = clang
 GCC     = $(Q)$(CC)
@@ -39,6 +40,13 @@ all: $(EXECUTABLES)
 %: %.cpp
 	$(ECHO) "G++\t$@"
 	$(GXX) $(CXXFLAGS) $< -o $@
+
+%.test: %
+	$(ECHO) "Testing\t$<"
+	@./$< >/dev/null
+
+.PHONY: test
+tests: $(TESTS)
 
 .PHONY: clean
 clean:
