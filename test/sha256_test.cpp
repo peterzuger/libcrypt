@@ -22,7 +22,7 @@ int main(){
         std::cout << "0x";
         for(const auto& i : res)
             std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<unsigned int>(i);
-        std::cout <<  "\n" << output << "\n";
+        std::cout << "\n" << output << "\n";
     }
     {
         libcrypt::sha256 algo;
