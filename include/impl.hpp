@@ -15,11 +15,13 @@ namespace libcrypt{
     namespace impl{
         template<typename T>
         constexpr T ROTLEFT(T a, std::size_t b){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return ((a << b) | (a >> ((sizeof(T)*8) - b)));
         }
 
         template<typename T>
         constexpr T ROTRIGHT(T a, std::size_t b){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (((a) >> (b)) | ((a) << ((sizeof(T)*8)-(b))));
         }
 
