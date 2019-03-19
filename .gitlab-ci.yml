@@ -1,0 +1,11 @@
+image: gcc
+
+build:
+  stage: build
+  script: 
+    - make -C test
+
+test:
+  stage: test
+  script: 
+    - make -C test tests
