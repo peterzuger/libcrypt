@@ -13,8 +13,8 @@ CXXSRC  = $(wildcard *.cpp)
 EXECUTABLES = $(CXXSRC:.cpp=)
 TESTS = $(CXXSRC:.cpp=.test)
 
-CC      = clang
-GCC     = $(Q)$(CC)
+CC      = g
+GCC     = $(Q)$(CC)cc
 GXX     = $(Q)$(CC)++
 ECHO    = @echo -e
 RM      = $(Q)rm $(V)
