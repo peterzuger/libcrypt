@@ -15,12 +15,12 @@ namespace libcrypt{
     namespace impl{
         template<typename T>
         constexpr T ROTLEFT(T a, std::size_t b){
-            return ((a << b) | (a >> (32 - b)));
+            return ((a << b) | (a >> ((sizeof(T)*8) - b)));
         }
 
         template<typename T>
         constexpr T ROTRIGHT(T a, std::size_t b){
-            return (((a) >> (b)) | ((a) << (32-(b))));
+            return (((a) >> (b)) | ((a) << ((sizeof(T)*8)-(b))));
         }
 
         constexpr std::uint32_t CH(std::uint32_t x, std::uint32_t y, std::uint32_t z){
