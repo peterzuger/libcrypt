@@ -20,11 +20,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <sha1.hpp>
 #include <iomanip>
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
+
+#include <sha1.hpp>
 
 int main(){
     {

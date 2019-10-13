@@ -23,8 +23,9 @@
 #ifndef LIBCRYPT_SHA1_HPP
 #define LIBCRYPT_SHA1_HPP
 
-#include <cstdint>
 #include <array>
+#include <cstdint>
+
 #include "impl.hpp"
 
 namespace libcrypt{

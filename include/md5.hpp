@@ -23,8 +23,9 @@
 #ifndef LIBCRYPT_MD5_HPP
 #define LIBCRYPT_MD5_HPP
 
-#include <cstdint>
 #include <array>
+#include <cstdint>
+
 #include "impl.hpp"
 
 namespace libcrypt{

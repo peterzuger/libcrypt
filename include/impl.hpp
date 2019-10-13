@@ -23,9 +23,9 @@
 #ifndef LIBCRYPT_IMPL_HPP
 #define LIBCRYPT_IMPL_HPP
 
-#include <type_traits>
-#include <cstdint>
 #include <cstddef>
+#include <cstdint>
+#include <type_traits>
 
 namespace libcrypt{
     namespace impl{

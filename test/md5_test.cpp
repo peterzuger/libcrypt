@@ -20,11 +20,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <md5.hpp>
 #include <iomanip>
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
+
+#include <md5.hpp>
 
 int main(){
     {
