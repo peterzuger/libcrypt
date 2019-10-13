@@ -69,7 +69,10 @@ namespace libcrypt{
             // endian byte order CPU. Reverse all the bytes upon input, and re-reverse them
             // on output (in final()).
             for(i = 0, j = 0; i < 16; ++i, j += 4)
-                m[i] = static_cast<std::uint32_t>((data[j]) + (data[j + 1] << 8) + (data[j + 2] << 16) + (data[j + 3] << 24));
+                m[i] = static_cast<std::uint32_t>((data[j]          ) +
+                                                  (data[j + 1] <<  8) +
+                                                  (data[j + 2] << 16) +
+                                                  (data[j + 3] << 24)   );
 
             a = state[0];
             b = state[1];
