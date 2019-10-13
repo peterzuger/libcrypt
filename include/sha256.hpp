@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/include/sha256.hpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   27.02.2019
  * @brief  sha256 hash implementation
  */

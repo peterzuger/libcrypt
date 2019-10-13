@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/include/md5.hpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   27.02.2019
  * @brief  md5 hash implementation
  */

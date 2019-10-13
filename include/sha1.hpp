@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/include/sha1.hpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   26.02.2019
  * @brief  sha1 hash implementation
  */

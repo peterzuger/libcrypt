@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/include/sha224.hpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   28.02.2019
  * @brief  sha224 hash implementation
  */

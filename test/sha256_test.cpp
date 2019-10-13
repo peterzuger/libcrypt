@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/test/sha256_test.cpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   26.02.2019
  * @brief  sha256 hash implementation
  */

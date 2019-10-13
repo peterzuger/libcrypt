@@ -1,7 +1,7 @@
 /**
  * @file   libcrypt/include/impl.hpp
  * @author Brad Conte (brad AT bradconte.com)
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   27.02.2019
  * @brief  libcrypt implementation details
  */
