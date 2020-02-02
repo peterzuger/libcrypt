@@ -66,10 +66,10 @@ namespace libcrypt{
     }
 
     class md5{
-        std::array<std::uint8_t,64> data;
+        std::array<std::uint8_t, 64> data;
         std::uint32_t datalen;
         std::uint64_t bitlen;
-        std::array<std::uint32_t,4> state;
+        std::array<std::uint32_t, 4> state;
 
         void transform(){
             std::array<std::uint32_t, 16> m;
@@ -191,7 +191,7 @@ namespace libcrypt{
                           "libcrypt::md5::update: T must be byte");
             data[datalen] = static_cast<std::uint8_t>(byte);
             datalen++;
-            if(datalen == 64){
+            if(datalen == data.size()){
                 transform();
                 bitlen += 512;
                 datalen = 0;
@@ -207,8 +207,8 @@ namespace libcrypt{
             }
         }
 
-        std::array<std::uint8_t,16> final(){
-            std::array<std::uint8_t,16> hash;
+        std::array<std::uint8_t, 16> final(){
+            std::array<std::uint8_t, 16> hash;
             size_t i = datalen;
 
             // Pad whatever data is left in the buffer.

@@ -120,7 +120,7 @@ namespace libcrypt{
                           "libcrypt::sha224::update: T must be byte");
             data[datalen] = static_cast<std::uint8_t>(byte);
             datalen++;
-            if(datalen == 64){
+            if(datalen == data.size()){
                 transform();
                 bitlen += 512;
                 datalen = 0;
@@ -136,8 +136,8 @@ namespace libcrypt{
             }
         }
 
-        std::array<std::uint8_t,28> final(){
-            std::array<std::uint8_t,28> hash;
+        std::array<std::uint8_t, 28> final(){
+            std::array<std::uint8_t, 28> hash;
             std::uint32_t i = datalen;
 
             // Pad whatever data is left in the buffer.

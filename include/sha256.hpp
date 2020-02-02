@@ -136,8 +136,8 @@ namespace libcrypt{
             }
         }
 
-        std::array<std::uint8_t,32> final(){
-            std::array<std::uint8_t,32> hash;
+        std::array<std::uint8_t, 32> final(){
+            std::array<std::uint8_t, 32> hash;
             std::uint32_t i = datalen;
 
             // Pad whatever data is left in the buffer.

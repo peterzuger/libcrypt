@@ -147,7 +147,7 @@ namespace libcrypt{
             }
         }
 
-        std::array<std::uint8_t,20> final(){
+        std::array<std::uint8_t, 20> final(){
             std::array<std::uint8_t, 20> hash;
             std::uint32_t i = datalen;
 
