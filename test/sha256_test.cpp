@@ -42,7 +42,7 @@ int main(){
         std::string txt{"abc"};
         std::string output{"0xba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -59,7 +59,7 @@ int main(){
         //std::string txt{""};
         std::string output{"0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"};
 
-        //algo.update(txt);
+        //algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -76,7 +76,7 @@ int main(){
         std::string txt{"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"};
         std::string output{"0x248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -94,7 +94,7 @@ int main(){
                         "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"};
         std::string output{"0xcf5b16a778af8380036ce59e7b0492370b249b11e8f07a51afac45037afee9d1"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -112,7 +112,7 @@ int main(){
         std::string output{"0xcdc76e5c9914fb9281a1c7e284d73e67f1809a48a497200e046d39ccc7112cd0"};
 
         for(std::size_t i = 0; i < 1000000; i++)
-            algo.update(txt);
+            algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -130,7 +130,7 @@ int main(){
         std::string output{"0x50e72a0e26442fe2552dc3938ac58658228c0cbfb1d2ca872ae435266fcd055e"};
 
         for(std::size_t i = 0; i < 16777216; i++)
-            algo.update(txt);
+            algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";

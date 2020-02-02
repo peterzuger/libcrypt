@@ -34,6 +34,7 @@
 
 #include <array>
 #include <cstdint>
+#include <iterator>
 
 #include "impl.hpp"
 
@@ -114,17 +115,24 @@ namespace libcrypt{
         }
 
         template<typename T>
-        void update(const T& _data){
-            static_assert((sizeof(typename T::value_type) == 1),
+        void update(const T& byte){
+            static_assert((sizeof(T) == 1),
+                          "libcrypt::sha256::update: T must be byte");
+            data[datalen] = static_cast<std::uint8_t>(byte);
+            datalen++;
+            if(datalen == data.size()){
+                transform();
+                bitlen += 512;
+                datalen = 0;
+            }
+        }
+
+        template<typename Iterator>
+        void update(Iterator first, Iterator last){
+            static_assert((sizeof(typename std::iterator_traits<Iterator>::value_type) == 1),
                           "libcrypt::sha256::update: T::value_type must be byte");
-            for(const auto& i : _data){
-                data[datalen] = static_cast<std::uint8_t>(i);
-                datalen++;
-                if(datalen == data.size()){
-                    transform();
-                    bitlen += 512;
-                    datalen = 0;
-                }
+            for(; first != last; ++first){
+                update(*first);
             }
         }
 

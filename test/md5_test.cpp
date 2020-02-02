@@ -42,7 +42,7 @@ int main(){
         std::string txt{"abc"};
         std::string output{"0x900150983cd24fb0d6963f7d28e17f72"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -59,7 +59,7 @@ int main(){
         //std::string txt{""};
         std::string output{"0xd41d8cd98f00b204e9800998ecf8427e"};
 
-        //algo.update(txt);
+        //algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -76,7 +76,7 @@ int main(){
         std::string txt{"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"};
         std::string output{"0x8215ef0796a20bcaaae116d3876c664a"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -94,7 +94,7 @@ int main(){
                         "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"};
         std::string output{"0x03dd8807a93175fb062dfb55dc7d359c"};
 
-        algo.update(txt);
+        algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -112,7 +112,7 @@ int main(){
         std::string output{"0x7707d6ae4e027c70eea2a935c2296f21"};
 
         for(std::size_t i = 0; i < 1000000; i++)
-            algo.update(txt);
+            algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
@@ -130,7 +130,7 @@ int main(){
         std::string output{"0xd338139169d50f55526194c790ec0448"};
 
         for(std::size_t i = 0; i < 16777216; i++)
-            algo.update(txt);
+            algo.update(txt.begin(), txt.end());
         auto res = algo.final();
         std::stringstream str;
         str << "0x";
