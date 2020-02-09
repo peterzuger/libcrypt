@@ -41,49 +41,49 @@ namespace libcrypt{
         template<typename T>
         constexpr T ROTLEFT(T a, std::size_t b){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return ((a << b) | (a >> ((sizeof(T)*8) - b)));
+            return (a << b) | (a >> ((sizeof(T) * 8) - b));
         }
 
         template<typename T>
         constexpr T ROTRIGHT(T a, std::size_t b){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (((a) >> (b)) | ((a) << ((sizeof(T)*8)-(b))));
+            return (a >> b) | (a << ((sizeof(T) * 8) - b));
         }
 
         template<typename T>
         constexpr T CH(T x, T y, T z){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (((x) & (y)) ^ (~(x) & (z)));
+            return (x & y) ^ (~x & z);
         }
 
         template<typename T>
         constexpr T MAJ(T x, T y, T z){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (((x) & (y)) ^ ((x) & (z)) ^ ((y) & (z)));
+            return (x & y) ^ (x & z) ^ (y & z);
         }
 
         template<typename T>
         constexpr T EP0(T x){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (ROTRIGHT(x,2) ^ ROTRIGHT(x,13) ^ ROTRIGHT(x,22));
+            return ROTRIGHT(x, 2) ^ ROTRIGHT(x, 13) ^ ROTRIGHT(x, 22);
         }
 
         template<typename T>
         constexpr T EP1(T x){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (ROTRIGHT(x,6) ^ ROTRIGHT(x,11) ^ ROTRIGHT(x,25));
+            return ROTRIGHT(x, 6) ^ ROTRIGHT(x, 11) ^ ROTRIGHT(x, 25);
         }
 
         template<typename T>
         constexpr T SIG0(T x){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (ROTRIGHT(x,7) ^ ROTRIGHT(x,18) ^ ((x) >> 3));
+            return ROTRIGHT(x, 7) ^ ROTRIGHT(x, 18) ^ (x >> 3);
         }
 
         template<typename T>
         constexpr T SIG1(T x){
             static_assert(std::is_integral_v<T>, "type must be integral");
-            return (ROTRIGHT(x,17) ^ ROTRIGHT(x,19) ^ ((x) >> 10));
+            return ROTRIGHT(x, 17) ^ ROTRIGHT(x, 19) ^ (x >> 10);
         }
     }
 }
