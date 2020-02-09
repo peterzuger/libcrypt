@@ -65,7 +65,7 @@ namespace libcrypt{
                                                   (data[j + 1] << 16) |
                                                   (data[j + 2] <<  8) |
                                                   (data[j + 3]      )   );
-            for( ; i < 64; ++i)
+            for(; i < 64; ++i)
                 m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
 
             a = state[0];
@@ -77,7 +77,7 @@ namespace libcrypt{
             g = state[6];
             h = state[7];
 
-            for (i = 0; i < 64; ++i) {
+            for(i = 0; i < 64; ++i){
                 t1 = h + EP1(e) + CH(e,f,g) + k[i] + m[i];
                 t2 = EP0(a) + MAJ(a,b,c);
                 h = g;

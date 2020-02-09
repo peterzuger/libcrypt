@@ -154,7 +154,7 @@ namespace libcrypt{
             // Pad whatever data is left in the buffer.
             if(datalen < 56){
                 data[i++] = 0x80;
-                while (i < 56)
+                while(i < 56)
                     data[i++] = 0x00;
             }else {
                 data[i++] = 0x80;
@@ -186,6 +186,7 @@ namespace libcrypt{
                 hash[i + 12] = (state[3] >> (24 - i * 8)) & 0x000000ff;
                 hash[i + 16] = (state[4] >> (24 - i * 8)) & 0x000000ff;
             }
+
             return hash;
         }
     };

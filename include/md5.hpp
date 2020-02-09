@@ -245,6 +245,7 @@ namespace libcrypt{
                 hash[i + 8]  = (state[2] >> (i * 8)) & 0x000000ff;
                 hash[i + 12] = (state[3] >> (i * 8)) & 0x000000ff;
             }
+
             return hash;
         }
     };

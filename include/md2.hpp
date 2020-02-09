@@ -145,6 +145,7 @@ namespace libcrypt{
 
             std::array<std::uint8_t, 16> hash;
             std::memcpy(hash.data(), state.data(), hash.size());
+
             return hash;
         }
     };
