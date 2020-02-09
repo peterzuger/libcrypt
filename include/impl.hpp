@@ -50,27 +50,39 @@ namespace libcrypt{
             return (((a) >> (b)) | ((a) << ((sizeof(T)*8)-(b))));
         }
 
-        constexpr std::uint32_t CH(std::uint32_t x, std::uint32_t y, std::uint32_t z){
+        template<typename T>
+        constexpr T CH(T x, T y, T z){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (((x) & (y)) ^ (~(x) & (z)));
         }
 
-        constexpr std::uint32_t MAJ(std::uint32_t x, std::uint32_t y, std::uint32_t z){
+        template<typename T>
+        constexpr T MAJ(T x, T y, T z){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (((x) & (y)) ^ ((x) & (z)) ^ ((y) & (z)));
         }
 
-        constexpr std::uint32_t EP0(std::uint32_t x){
+        template<typename T>
+        constexpr T EP0(T x){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (ROTRIGHT(x,2) ^ ROTRIGHT(x,13) ^ ROTRIGHT(x,22));
         }
 
-        constexpr std::uint32_t EP1(std::uint32_t x){
+        template<typename T>
+        constexpr T EP1(T x){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (ROTRIGHT(x,6) ^ ROTRIGHT(x,11) ^ ROTRIGHT(x,25));
         }
 
-        constexpr std::uint32_t SIG0(std::uint32_t x){
+        template<typename T>
+        constexpr T SIG0(T x){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (ROTRIGHT(x,7) ^ ROTRIGHT(x,18) ^ ((x) >> 3));
         }
 
-        constexpr std::uint32_t SIG1(std::uint32_t x){
+        template<typename T>
+        constexpr T SIG1(T x){
+            static_assert(std::is_integral_v<T>, "type must be integral");
             return (ROTRIGHT(x,17) ^ ROTRIGHT(x,19) ^ ((x) >> 10));
         }
     }
