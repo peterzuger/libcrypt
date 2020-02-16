@@ -38,7 +38,7 @@
 
 int main(){
     {
-        libcrypt::md2 algo;
+        crypt::md2 algo;
         std::string txt{"abc"};
         std::string output{"0xda853b0d3f88d99b30283a69e6ded6bb"};
 
@@ -55,7 +55,7 @@ int main(){
         }
     }
     {
-        libcrypt::md2 algo;
+        crypt::md2 algo;
         std::string txt{"abcdefghijklmnopqrstuvwxyz"};
         std::string output{"0x4e8ddff3650292ab5a4108c3aa47940b"};
 
@@ -72,7 +72,7 @@ int main(){
         }
     }
     {
-        libcrypt::md2 algo;
+        crypt::md2 algo;
         std::string txt1{"ABCDEFGHIJKLMNOPQRSTUVWXYZabcde"};
         std::string txt2{"fghijklmnopqrstuvwxyz0123456789"};
         std::string output{"0xda33def2a42df13975352846c30338cd"};

@@ -38,7 +38,7 @@
 
 #include "impl.hpp"
 
-namespace libcrypt{
+namespace crypt{
     class sha1{
         std::array<std::uint8_t, 64> data;
         std::uint32_t datalen;
@@ -128,7 +128,7 @@ namespace libcrypt{
         template<typename T>
         void update(const T& byte){
             static_assert((sizeof(T) == 1),
-                          "libcrypt::sha1::update: T must be byte");
+                          "crypt::sha1::update: T must be byte");
             data[datalen] = static_cast<std::uint8_t>(byte);
             datalen++;
             if(datalen == data.size()){
@@ -141,7 +141,7 @@ namespace libcrypt{
         template<typename Iterator>
         void update(Iterator first, Iterator last){
             static_assert((sizeof(typename std::iterator_traits<Iterator>::value_type) == 1),
-                          "libcrypt::sha1::update: T::value_type must be byte");
+                          "crypt::sha1::update: T::value_type must be byte");
             for(; first != last; ++first){
                 update(*first);
             }

@@ -38,7 +38,7 @@
 
 int main(){
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         std::string txt{"abc"};
         std::string output{"0x900150983cd24fb0d6963f7d28e17f72"};
 
@@ -55,7 +55,7 @@ int main(){
         }
     }
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         //std::string txt{""};
         std::string output{"0xd41d8cd98f00b204e9800998ecf8427e"};
 
@@ -72,7 +72,7 @@ int main(){
         }
     }
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         std::string txt{"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"};
         std::string output{"0x8215ef0796a20bcaaae116d3876c664a"};
 
@@ -89,7 +89,7 @@ int main(){
         }
     }
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         std::string txt{"abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmn"
                         "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"};
         std::string output{"0x03dd8807a93175fb062dfb55dc7d359c"};
@@ -107,7 +107,7 @@ int main(){
         }
     }
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         std::string txt{"a"};
         std::string output{"0x7707d6ae4e027c70eea2a935c2296f21"};
 
@@ -125,7 +125,7 @@ int main(){
         }
     }
     {
-        libcrypt::md5 algo;
+        crypt::md5 algo;
         std::string txt{"abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno"};
         std::string output{"0xd338139169d50f55526194c790ec0448"};
 

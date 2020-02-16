@@ -38,7 +38,7 @@
 
 int main(){
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         std::string txt{"abc"};
         std::string output{"0xa9993e364706816aba3e25717850c26c9cd0d89d"};
 
@@ -55,7 +55,7 @@ int main(){
         }
     }
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         //std::string txt{""};
         std::string output{"0xda39a3ee5e6b4b0d3255bfef95601890afd80709"};
 
@@ -72,7 +72,7 @@ int main(){
         }
     }
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         std::string txt{"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"};
         std::string output{"0x84983e441c3bd26ebaae4aa1f95129e5e54670f1"};
 
@@ -89,7 +89,7 @@ int main(){
         }
     }
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         std::string txt{"abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmn"
                         "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu"};
         std::string output{"0xa49b2446a02c645bf419f995b67091253a04a259"};
@@ -107,7 +107,7 @@ int main(){
         }
     }
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         std::string txt{"a"};
         std::string output{"0x34aa973cd4c4daa4f61eeb2bdbad27316534016f"};
 
@@ -125,7 +125,7 @@ int main(){
         }
     }
     {
-        libcrypt::sha1 algo;
+        crypt::sha1 algo;
         std::string txt{"abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno"};
         std::string output{"0x7789f0c9ef7bfc40d93311143dfbe69e2017f592"};
 

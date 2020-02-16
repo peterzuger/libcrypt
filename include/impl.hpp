@@ -36,7 +36,7 @@
 #include <cstdint>
 #include <type_traits>
 
-namespace libcrypt{
+namespace crypt{
     namespace impl{
         template<typename T>
         constexpr T ROTLEFT(T a, std::size_t b){

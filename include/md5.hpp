@@ -38,7 +38,7 @@
 
 #include "impl.hpp"
 
-namespace libcrypt{
+namespace crypt{
     namespace impl{
         constexpr void FF(std::uint32_t& a, std::uint32_t b, std::uint32_t c,
                           std::uint32_t d, std::uint32_t m, std::uint32_t s, std::uint32_t t){
@@ -188,7 +188,7 @@ namespace libcrypt{
         template<typename T>
         void update(const T& byte){
             static_assert((sizeof(T) == 1),
-                          "libcrypt::md5::update: T must be byte");
+                          "crypt::md5::update: T must be byte");
             data[datalen] = static_cast<std::uint8_t>(byte);
             datalen++;
             if(datalen == data.size()){
@@ -201,7 +201,7 @@ namespace libcrypt{
         template<typename Iterator>
         void update(Iterator first, Iterator last){
             static_assert((sizeof(typename std::iterator_traits<Iterator>::value_type) == 1),
-                          "libcrypt::md5::update: T::value_type must be byte");
+                          "crypt::md5::update: T::value_type must be byte");
             for(; first != last; ++first){
                 update(*first);
             }

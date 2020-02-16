@@ -39,7 +39,7 @@
 
 #include "impl.hpp"
 
-namespace libcrypt{
+namespace crypt{
     class md2{
         std::array<std::uint8_t, 16> data;
         std::array<std::uint8_t, 48> state;
@@ -97,7 +97,7 @@ namespace libcrypt{
         template<typename T>
         void update(const T& byte){
             static_assert((sizeof(T) == 1),
-                          "libcrypt::md2::update: T must be byte");
+                          "crypt::md2::update: T must be byte");
             data[len] = static_cast<std::uint8_t>(byte);
             len++;
             if(len == data.size()){
@@ -109,7 +109,7 @@ namespace libcrypt{
         template<typename Iterator>
         void update(Iterator first, Iterator last){
             static_assert((sizeof(typename std::iterator_traits<Iterator>::value_type) == 1),
-                          "libcrypt::md2::update: T::value_type must be byte");
+                          "crypt::md2::update: T::value_type must be byte");
             for(; first != last; ++first){
                 update(*first);
             }
