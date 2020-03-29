@@ -102,6 +102,10 @@ namespace crypt{
 
     public:
         sha224(){
+            reset();
+        }
+
+        void reset(){
             datalen = 0;
             bitlen = 0;
             state[0] = 0xc1059ed8;

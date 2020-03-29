@@ -89,6 +89,10 @@ namespace crypt{
 
     public:
         md2(){
+            reset();
+        }
+
+        void reset(){
             state.fill(0);
             checksum.fill(0);
             len = 0;

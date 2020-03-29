@@ -39,7 +39,13 @@ namespace crypt{
         std::uint32_t hash;
 
     public:
-        sdbm(): hash{0}{}
+        sdbm(){
+            reset();
+        }
+
+        void reset(){
+            hash = 0;
+        }
 
         template<typename T>
         void update(const T& byte){

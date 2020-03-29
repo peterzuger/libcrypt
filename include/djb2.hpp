@@ -39,7 +39,13 @@ namespace crypt{
         std::uint32_t hash;
 
     public:
-        djb2(): hash{5381}{}
+        djb2(){
+            reset();
+        }
+
+        void reset(){
+            hash = 5381;
+        }
 
         template<typename T>
         void update(const T& byte){

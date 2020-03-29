@@ -177,6 +177,10 @@ namespace crypt{
 
     public:
         md5(){
+            reset();
+        }
+
+        void reset(){
             datalen = 0;
             bitlen = 0;
             state[0] = 0x67452301;

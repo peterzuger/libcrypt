@@ -102,6 +102,10 @@ namespace crypt{
 
     public:
         sha256(){
+            reset();
+        }
+
+        void reset(){
             datalen = 0;
             bitlen = 0;
             state[0] = 0x6a09e667;
